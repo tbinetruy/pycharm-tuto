@@ -23,7 +23,8 @@ class REPL:
         if fn_name == 'dotproduct':
             vect1 = user_input.split(' ')[1]
             vect2 = user_input.split(' ')[2]
-            result = eval("np.dot(" + vect1 + "," + vect2 + ")")
+            # TODO refactor this
+            result = print(eval("np.dot(" + vect1 + "," + vect2 + ")"))
 
         return result
 
