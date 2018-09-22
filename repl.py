@@ -2,6 +2,7 @@ import datetime
 
 class REPL:
     def __init__(self):
+        print('Welcome, press help for instructions')
         print('Press Ctrl-C Ctrl-C to quit for the terminal or Ctrl-D from the REPL.')
 
         while 1:
