@@ -5,9 +5,23 @@
 This document provides an introduction to using PyCharm Community Edition, which is free, along with its Git integration. We will create a small command line utility in python that will:
 
 1. Return the current time when the user enter ~time~;
-2. Returns vector dot product when user enters two vectors, for example when he enters ~got-product [1, 2, 3] [4, 5, 6]~.
+2. Returns vector dot product when user enters two vectors, for example when he enters ~dot-product [1, 2, 3] [4, 5, 6]~.
 
 We'll need to parse our user's input, and decide whether to call the python ~time~ function, which will require an ~import datetime~, or the ~numpy.dot~ method.
+
+Here's what the program looks like in action:
+
+#+begin_src bash
+>> help
+Here are the available commands: 
+ help 
+ time 
+ dotproduct
+>> time
+2018-09-23
+>> dotproduct [1,2,3] [4,5,6]
+32
+#+end_src
 
 * Getting accustomed to PyCharm and Git
 ** Setting up the project
