@@ -315,7 +315,7 @@ Well here you go, this was a quick look into how to use PyCharm to create a fun 
 
 So far we've only used Git to version our own work. This is already really great, but the true power or Git is you can merge your branched with other people's, that you can easily download other git repositories from the web (using ~git clone~), contribute to it locally, and upload your contributions back (with ~git push~).
 
-However, I think this document does a decent job at giving an overview of the very basics of Git and how they can be benefit short term. Similarly, PyCharm has its very own Python REPL that we've started using but that is much more powerful. We it allows use to "send" our file to it and be able to investigate what variables are equal to. Better, it allows us to send *parts* of a script only. But don't worry about this for now, just know that it exists because maybe you'll need it someday!
+However, I think this document does a decent job at giving an overview of the very basics of Git and how they can be benefit short term. Similarly, PyCharm has its very own Python REPL that we've started using but that is much more powerful. We it allows use to "send" our file to it and be able to investigate what variables are equal to. Better, it allows us to evaluate specific *parts* of a script on demand. But don't worry about this for now, just know that it exists because maybe you'll need it someday!
 
 Let me know if you have any questions about this document: /thomas.binetruy@telecom-paristech.fr/, and thanks for having spent the time to read this.
 
