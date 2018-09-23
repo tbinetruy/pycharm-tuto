@@ -204,22 +204,24 @@ import numpy as np
 class REPL:
 
   # ...
-  
+
   def eval(self, user_input):
-      result = 'Command not recognized. ' + self.help_message
+      help_message = 'Here are the available commands: \n help \n time \n dotproduct'
+      result = 'Command not recognized. ' + help_message
 
       fn_name = user_input.split(' ')[0]
 
       if fn_name == 'time':
           result = datetime.date.today()
       if fn_name == 'help':
-          result = self.help_message
+          result = help_message
       if fn_name == 'dotproduct':
           vect1 = user_input.split(' ')[1]
           vect2 = user_input.split(' ')[2]
           result = eval("np.dot(" + vect1 + "," + vect2 + ")")
 
       return result
+  
 #+end_src python
 
 Run it in the REPL and you should get:
