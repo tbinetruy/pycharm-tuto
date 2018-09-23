@@ -343,6 +343,8 @@ So far we've only used Git to version our own work. This is already really great
 
 However, I believe this document does a /decent/ job at giving an overview of the very basics of Git and how they can be benefit /short term/. Similarly, PyCharm has its very own Python REPL that we've started using but that is much more powerful. We it allows use to "send" our file to it and be able to investigate what variables are equal to. Better, it allows us to evaluate specific *parts* of a script on demand. But don't worry about this for now, just know that it exists because maybe you'll need it someday!
 
+Don't forget to have a look at the tree first chapters from [[https://github.com/progit/progit2/releases/download/2.1.86/progit.pdf][Pro Git]] which will teach your about branching and what *Git* as actually doing under to hood. You'll learn about how git moves you from a branch to another when you perform a ~checkout~, or what a branch actually is, and many other /crucial/ concepts in Git. Don't be scared, it's a very /visual/ book, and is therefore very helpful in allowing one to construct a mental image of what Git operations /concretely/ do.
+
 Let me know if you have any questions about this document: /thomas.binetruy@telecom-paristech.fr/, and thanks for having spent the time to read this.
 
 The source code for this document is available here: [[https://github.com/tbinetruy/pycharm-tuto]] . Feel free to create an issue if something doesn't work, or a pull request for those that know what it is and want to contribute.
