@@ -2,7 +2,7 @@
 
 * Introduction
 
-This document provides an introduction to using PyCharm Community Edition, which is free, along with its Git integration. We will create a small command line utility in python that will:
+This document provides an introduction to using PyCharm Community Edition, /which is free/, along with its Git integration. We will create a small command line utility in python that will:
 
 1. Return the current time when the user enter ~time~;
 2. Returns vector dot product when user enters two vectors, for example when he enters ~dotproduct [1, 2, 3] [4, 5, 6]~.
@@ -23,15 +23,25 @@ Here are the available commands:
 32
 #+end_src
 
+This is a basic [[https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop][REPL]] (Read, Eval, Print, Loop): the program takes a user input, processes it, prints the evaluation's output, and loops so that the user can enter further commands.
+
+Python has a REPL of its own: it's a command line interface (CLI) that waits for Python expressions and prints their outputs before asking for another input.
+
+Your terminal emulator is also a REP: it reads an input, evaluates it, prints its output, and loops.
+
 * Getting accustomed to PyCharm and Git
 ** Setting up the project
 
-1. [[https://www.jetbrains.com/pycharm/download/#section=linux][Download]] PyCharm Community Edition for your platform
-2. Open PyCharm
-3. Click on Create New Project and call it ~tuto-1~
-4. ~File -> New -> Python File~, name it ~repl.py~
+1. [[https://www.jetbrains.com/pycharm/download/#section=linux][Download]] PyCharm Community Edition for your platform, it's /free/ for everybody;
+2. Open PyCharm;
+3. Click on Create New Project and call it ~tuto-1~ if it's the first time opening PyCharm. Otherwise, ~File -> New Project~ in the toolbar the the top of your window;
+4. Make sure you pick the proper interpreter, choosing Conda will configure everything so that scientific packages such as /Numpy/ wil be preinstalled;
+5. ~File -> New -> Python File~, name it ~repl.py~.
 
-** The REPL
+#+CAPTION: PyCharm's create project popup
+[[./img/create-project-popup.png]]
+
+** Our REPL program
 
 Copy this code into ~repl.py~ to get us started:
 
@@ -59,22 +69,26 @@ We'll see two ways to execute your code form PyCharm. At this point you might no
    
 **** From the terminal
   
-let's execute this code to see what it does:
+Let's execute this code using the command line to see what it does:
 
-1. Click on the terminal tab at the bottom right of the PyCharm window:
-2. type ~python repl.py~ to run the script
-3. Type something into the prompt
-4. Our REPL should spit it back at user
-5. Got to stop 3. if you're bored and step 6 otherwise
-6. Press Ctrl-C to quit
+1. Click on the terminal tab at the bottom right of the PyCharm window;
+2. type ~python repl.py~ to run the script (~cd~ into your project directory if you're not already in it. Use ~pwd~ to see your current path);
+3. Type something into the prompt;
+4. Our REPL should spit it back at user;
+5. Got to stop 3. if you're bored and step 6 otherwise;
+6. Press Ctrl-C to quit.
 
 #+CAPTION: PyCharm's console tab
 [[./img/console-tab.png]]
 
-**** From the python REPL
+**** From the python REPL 
+     
+We're now going to run our code slightly differently, we're going to send our script to the Python REPL (which is what you get when you type ~python~ in your terminal). To do this:
     
-1. Right click on your code and click on ~Run 'repl'~
-2. It should pup up a repl tab under your code showing our intro message followed by a prompt.
+1. Right click on your code and click on ~Run 'repl'~;
+2. It should pup up a REPL tab under your code showing our intro message followed by a prompt.
+
+We'll find out that running our code directly in the REPL makes iterating on Python code very natural, because it allows us quickly inspect variables after our script has ran (since it'll be loaded in memory).
 
 #+CAPTION: REPL first run
 [[./img/repl-first-run.png]]
@@ -83,12 +97,12 @@ let's execute this code to see what it does:
   
 Okay, so now that we have setup our boilerplate code for our script, let's Git it using the PyCharm integration. Make sure you have Git installed on your platform, it's an independent program from PyCharm.
 
-1. In the top toolbar, clock on ~VCS -> Enable version control integration -> 'Git' in the dropdown -> OK~. You should see a green message saying "Create Git repository in [project path]".
-2. Now, you file is added to the index to Git status (check by clicking on the terminal tab and typing in ~git status~) but we still need to commit out changes.
-3. On the top right of the PyCharm window should be a box saying "Git" with a blue arrow pointing down and a green checkbox on its right. Click on the checkbox to prepare our commit
+1. In the top toolbar, clock on ~VCS -> Enable version control integration -> 'Git' in the dropdown -> OK~. You should see a green message saying "Create Git repository in [project path]";
+2. Now, you file is added to the index to Git status (check by clicking on the terminal tab and typing in ~git status~) but we still need to commit out changes;
+3. On the top right of the PyCharm window should be a box saying "Git" with a blue arrow pointing down and a green checkbox on its right. Click on the checkbox to prepare our commit;
 4. You should see a popup with the added code in green at the bottom of the popup and an empty commit message textbox. Enter a commit message and click on the commit button at the bottom of the popup.
 
-You can now open your terminal (just use the one integrated to PyCharm like we've been doing) and type ~git status~ to and ~git log~ to show that our file changes have been added to our Git history!
+You can now open your terminal (just use the one integrated to PyCharm like we've been doing) and type ~git status~ followed by ~git log~ to show that our file changes have indeed been added to our Git history!
 
 #+CAPTION: Git repository created message
 [[./img/git-repo-create-msg.png]]
@@ -135,31 +149,31 @@ Now run our file in the repl (remember: right click on the file -> run 'repl) an
 
 ** Gitting our new modifications
 
-1. Right click on our script: ~-> Git -> Add~
-2. Click on green checkbox at the top right of the PyCharm window
-3. Enter a descriptive commit message such as "Implemented eval method with time and help commands"
-4. Click on commit
+1. Right click on our script: ~-> Git -> Add~;
+2. Click on green checkbox at the top right of the PyCharm window;
+3. Enter a descriptive commit message such as "Implemented eval method with time and help commands";
+4. Click on commit.
 
 You should see a green message at the bottom of the PyCharm window that showed up.
 
-If you type ~git log~ in the terminal tab, you'll see that wee now have 2 commits !
+If you type ~git log~ in the terminal tab, you'll see that we now have 2 commits!
 
 #+CAPTION: Commit popup for our second commit
 [[./img/second-commit-popup.png]]
 
 * Making our program non trivial
   
-With the help of Git, we'll be able to start making our program more complete while also being able to version it properly. We're going to implement the ~numpy.dot~ function that'll allow to use our REPL to compute the vector dot product between to vectors.
+With the help of Git, we'll be able to start making our program more complete while also being able to version it properly. We're going to implement the ~numpy.dot(vect1, vect2)~ method that'll allow to use our REPL to compute the vector dot product between to vectors.
 
 ** Branching
 
-Say that our crazy REPL program is used by thousands of users on our production system and therefore we absolutely do not want to commit on our /production branch/, which is the one we've been working off of currently ;p But we still want to be able to use git to track our development work. Thankfully, PyCharm allows us to interface through it to create a new git branch and switch to it - /checking out a branch/ in git language: ~git checkout [branch_name]~. 
+Say that our crazy REPL program is used by thousands of users on our production system and therefore we absolutely do not want to commit on our /production branch/, which is the one we've been working off of currently. But we still want to be able to use git to track our development work. Thankfully, PyCharm allows us to interface through it to create a new git branch and switch to it - /checking out a branch/ in git language: ~git checkout [branch_name]~. 
 
 1. In the top toolbar: ~VCS -> VCS Operations Popup... -> Branches -> New Branch~
-2. Type ~dev~ in the textbox, acknowledge the checkbox indicating that you will be switched to this new branch when creating it
+2. Type ~dev~ in the textbox, /acknowledge the checkbox indicating that you will be switched to this new branch when creating it/;
 3. Click okay to create our new dev branch and checking out to it.
 
-Now if you open the PyCharm terminal via its tab at the bottom, you can enter ~git branch~ to see that we have indeed switched to the dev branch (see the little star ?).
+Now if you open the PyCharm terminal via its tab at the bottom, you can enter ~git branch~ to see that we have indeed switched to the dev branch (see the little star next to the ~dev~ branch?).
 
 #+CAPTION: Git branches through the CLI
 [[./img/git-branch-console.png]]
@@ -173,15 +187,15 @@ Now that we're on our production branch anymore, we can start messing up the cod
   
 Let's add our program the ability to do the vector dot product using a special syntax: ~dotproduct [vector_1] [vector_2]~, and we'll define our vectors to be python arrays of numbers that *cannot* contain spaces (for now and simplicity's sake, this rabbit hole is for another day), for instance ~[1,2,3,100]~.
 
-The reason for this ( and quite frankly, very poor) design decision is that we'll be able to split our input string by spaces and then construct a string that we'll feed to python's ~eval~ function. the idea is that we get our program be behave as such:
+The reason for this /and quite frankly, very poor/ design decision is that we'll be able to split our input string by spaces and then construct a string that we'll feed to python's ~eval~ function. The idea is that we get our program be behave as such:
 
 #+begin_src bash
   >> dotproduct [1,2,3,4] [1,2,3,4]
-  # call np.dot([1,2,3,4],[1,2,3,4])
+  # calls np.dot([1,2,3,4],[1,2,3,4])
   30
 #+end_src
 
-We'll need to update our eval function to split our string by spaces and update the rest of our method to reflect this change. Then we'll need to create a ~dotproduct~ method for our class and call it when needed:
+We'll need to update our ~eval~ function to split our string by spaces and update the rest of our method to reflect this change. Then we'll need to create a ~dotproduct~ method for our class and call it when needed:
 
 #+begin_src python
 import datetime
@@ -242,7 +256,7 @@ Traceback (most recent call last):
 IndexError: list index out of range
 #+end_src
 
-And our program freezes...  This is why in practice *it's pure evil to use eval*. We did it here because  our goal isn't to make a useful program, but rather to learn about PyCharm by making a program that's kinda fun. That being said, let's make a note in our code that we need to refactor this part of the code in order to make it secure (aka, parse the user entry, construct the array from it and call ~numpy.dot~ while catching the appropriate exceptions).
+And our program freezes...  This is why in practice *it's considered pure evil to use eval*. We did it here because  our goal isn't to make a useful program, but rather to learn about PyCharm by making a program that's kinda fun. That being said, let's make a note in our code that we need to refactor this part of the code in order to make it secure (aka, parse the user entry, construct the array from it and call ~numpy.dot~ while catching the appropriate exceptions).
 
 #+begin_src python
 vect1 = user_input.split(' ')[1]
@@ -251,20 +265,20 @@ vect2 = user_input.split(' ')[2]
 result = print(eval("np.dot(" + vect1 + "," + vect2 + ")"))
 #+end_src
 
-Now if you click on the TODO tab at the bottom of your PyCharm window, you'll see your message appear from there. Really usefull to track todos !
+Now if you click on the TODO tab at the bottom of your PyCharm window, you'll see your message appear from there. Really useful to track todos !
 
 [[./img/pycharm-todo.png]]
 
-***  Looking at our branche's commits
+***  Looking at our git tree visually
 
 Click here on the clock icon located at the top right of your PyCharm window to pop the Git log tree.
 
 #+CAPTION: Git log icon
 [[./img/git-branch-log-icon.png]]
 
-This lists you the commits on your branch in a tray with a visual log. Double clicking on a commit message will show you the commit's diff.
+This shows you a visual commit tree in a tray that should have appeared. Double clicking on a commit message will show you the commit's diff.
 
-#+CAPTION: PyCharm visual branh log
+#+CAPTION: PyCharm visual branch log
 [[./img/git-branch-log-tray.png]]
 
 You can also right click on the commits to have more options. Of course, there's also a command line way to see your tree: ~git log --graph --all~.
@@ -295,7 +309,7 @@ Let's commit our changes and see what our git tree looks like before merging our
 2. Check the ~dev~ checkbox
 3. Click on ~Merge~
 
-If you've encountered a conflict, congratulations - you're now introduced to the Merge Conflict popup! Just click on ~Accept Yours~ for now since we know we haven't modified any of the old code. If you're still having problems, type ~git commit -m "merging"~ in the terminal to finish the merge. 
+If you've encountered a conflict, congratulations - you're now introduced to the Merge Conflict popup! Just click on ~Accept Theirs~ for now. If you're still having problems, type ~git commit -m "merging"~ in the terminal to finish the merge. 
 
  #+CAPTION: PyCharm merge popup location
 [[./img/pycharm-merge-location.png]]
@@ -307,15 +321,21 @@ If you've encountered a conflict, congratulations - you're now introduced to the
 
  #+CAPTION: PyCharm Git log after merge. Both the master and dev branches have the same commits.
 [[./img/pycharm-git-log-after-merge.png]]
+ 
+
+#+CAPTION: Git commit tree on the CLI afrter merge
+[[./img/git-log-graph-all.png]]
+
+/N.B. If you're wondering why my CLI tree doesn't look exactly the same as my PyCharm on, it's because I had extra commits and rewrote my history so that it wouldn't diverge too much from this tutorial (I tried to keep the same tree shape, but obviously my commit times now differ). Anywho.../ 
 
 
 * Conclusion
 
 Well here you go, this was a quick look into how to use PyCharm to create a fun little Python script, our crazy REPL that give you the current date and can do the vector dot product in the least secure way possible :D
 
-So far we've only used Git to version our own work. This is already really great, but the true power or Git is you can merge your branched with other people's, that you can easily download other git repositories from the web (using ~git clone~), contribute to it locally, and upload your contributions back (with ~git push~).
+So far we've only used Git to version our own work. This is already really great, but the true power or Git is you can merge your branched with other people's, that you can easily download other git repositories from the web (using ~git clone~), contribute to it locally, and upload your contributions back (with ~git push~) for them to be investigating.
 
-However, I think this document does a decent job at giving an overview of the very basics of Git and how they can be benefit short term. Similarly, PyCharm has its very own Python REPL that we've started using but that is much more powerful. We it allows use to "send" our file to it and be able to investigate what variables are equal to. Better, it allows us to evaluate specific *parts* of a script on demand. But don't worry about this for now, just know that it exists because maybe you'll need it someday!
+However, I believe this document does a /decent/ job at giving an overview of the very basics of Git and how they can be benefit /short term/. Similarly, PyCharm has its very own Python REPL that we've started using but that is much more powerful. We it allows use to "send" our file to it and be able to investigate what variables are equal to. Better, it allows us to evaluate specific *parts* of a script on demand. But don't worry about this for now, just know that it exists because maybe you'll need it someday!
 
 Let me know if you have any questions about this document: /thomas.binetruy@telecom-paristech.fr/, and thanks for having spent the time to read this.
 
