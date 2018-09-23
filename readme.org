@@ -1,6 +1,6 @@
-#+TITLE: Thomas Binetruy
+#+TITLE: PyCharm / Git
 #+INCLUDE: "../print/doctype-memo.org"
-{{{subtitle(PyCharm / Git)}}}
+{{{subtitle(Thomas Binetruy)}}}
 {{{theme-color(002684)}}}
 
 #+TOC: headlines 2
