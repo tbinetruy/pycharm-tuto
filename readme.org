@@ -1,5 +1,9 @@
 #+TITLE: PyCharm / Git
 
+* Abstract
+
+This documents demonstrates how to setup a Conda project with PyCharm Community Edition (/free for everybody/). We develop a program sufficiently simple as to not distract us from learning PyCharm but sufficiently comple that using Git is helpful. We use PyCharm's Git integration which allows us to see /diffs/ between commits, have a visual commit tree among other features. We show the equivalent CLI commands along with their results to convince us that PyCharm's Git integration is working as intended.
+
 * Introduction
 
 This document provides an introduction to using PyCharm Community Edition, /which is free/, along with its Git integration. We will create a small command line utility in python that will:
